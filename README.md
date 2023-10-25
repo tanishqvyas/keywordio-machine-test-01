@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Machine Test 01 by Keywordio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository holds the code for the `Machine Test 01` by the company Keywordio.
 
-## Available Scripts
+# Setup Instructions
 
-In the project directory, you can run:
+Please follow the below given instructions to setup and execute the project on your machine
 
-### `npm start`
+## Step 1: Ensuring the correct environment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Please make sure that you have `nvm` and `npm` installed on your machine.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The following versions were used for building this project
 
-### `npm test`
+1. npm : `9.5.0`
+2. nvm : `0.38.0`
+3. node : `18.15.0`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Step 2: Cloning the repository
 
-### `npm run build`
+Execute the below command to clone the code repository on your machine
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/tanishqvyas/keywordio-machine-test-01.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+then run the below command to change your present working directory to `keywordio-machine-test-01`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd keywordio-machine-test-01
+```
 
-### `npm run eject`
+## Step 3: Installing dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Execute the below command to install all the necessary dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Step 4: Running the development server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Execute the below command to run the development server on your machine
 
-## Learn More
+```bash
+npm run start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+With this you should have the instance of the application available at `localhost:3000`. In case the port is busy, some other port such as `3001`, `3002`, etc may be used.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+# Useful Links
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. [UI Mockup](https://xd.adobe.com/view/aaa4e9ba-d4e9-453b-af57-9797788d78bc-fff7/)
