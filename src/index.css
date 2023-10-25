@@ -6,4 +6,7 @@
 body {
   background-color: #fafafa;
   --nav-height: 64px;
+  /* colors */
+  --border-1: #dddddd;
+  --heading-1: #323c46;
 }

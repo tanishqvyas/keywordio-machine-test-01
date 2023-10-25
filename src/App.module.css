@@ -1,5 +1,5 @@
 .routes_container {
   box-sizing: border-box;
-  padding: 10px;
+  padding: 16px;
   height: calc(100vh - var(--nav-height));
 }
