@@ -54,3 +54,26 @@ With this you should have the instance of the application available at `localhos
 1. [UI Mockup](https://xd.adobe.com/view/aaa4e9ba-d4e9-453b-af57-9797788d78bc-fff7/)
 2. [Donut Charts](https://react-chartjs-2.js.org/examples/doughnut-chart)
 3. [Legend Positioning](https://www.chartjs.org/docs/latest/configuration/legend.html)
+
+
+# Screenshots of the Application
+
+## Dashboard Page
+
+![image](https://github.com/tanishqvyas/keywordio-machine-test-01/assets/43847978/cd20d169-775f-4a65-98ee-ce9b414c2c9d)
+
+![image](https://github.com/tanishqvyas/keywordio-machine-test-01/assets/43847978/d45a83e6-f7d4-4d9d-83c2-4316c2dd62f1)
+
+![image](https://github.com/tanishqvyas/keywordio-machine-test-01/assets/43847978/e98385a3-56f5-403c-a7b0-206d34b96f58)
+
+![image](https://github.com/tanishqvyas/keywordio-machine-test-01/assets/43847978/96c203db-7afa-499c-a718-1d9eee33e26c)
+
+
+## Create Ads Page
+
+![image](https://github.com/tanishqvyas/keywordio-machine-test-01/assets/43847978/a802e0f7-cc9c-4c23-855c-e3bb31fd4449)
+
+![image](https://github.com/tanishqvyas/keywordio-machine-test-01/assets/43847978/058c7518-37ea-4b66-aaed-e9b843cf45af)
+
+
+![image](https://github.com/tanishqvyas/keywordio-machine-test-01/assets/43847978/ee454b0e-fb0d-41b2-9b78-925c5feeb63c)
