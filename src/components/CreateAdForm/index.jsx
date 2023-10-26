@@ -43,23 +43,23 @@ const CreateAdForm = ({ name, isMedia = false }) => {
 
   const isDisabled = () => {
     if (
-      headingOne !== "" &&
-      headingTwo !== "" &&
-      description !== "" &&
+      headingOne === "" ||
+      headingTwo === "" ||
+      description === "" ||
       (isMedia
-        ? video !== "" &&
-          portraitImg !== "" &&
-          landscapeImg !== "" &&
-          squareImg !== ""
-        : false) &&
-      businessName !== "" &&
-      buttonLabel !== "" &&
-      websiteURL !== ""
+        ? video === "" ||
+          portraitImg === "" ||
+          landscapeImg === "" ||
+          squareImg === ""
+        : false) ||
+      businessName === "" ||
+      buttonLabel === "" ||
+      websiteURL == ""
     ) {
-      return false;
+      return true;
     }
 
-    return true;
+    return false;
   };
 
   const handleSubmit = () => {

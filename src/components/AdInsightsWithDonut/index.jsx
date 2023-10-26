@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import { DataGrid } from "@mui/x-data-grid";
 
 // icons
 import DonutLargeIcon from "@mui/icons-material/DonutLarge";
@@ -13,9 +14,11 @@ import BackupTableIcon from "@mui/icons-material/BackupTable";
 
 // components
 import SectionWithHeader from "../SectionWithHeader";
+import AggregateRow from "../AggregateRow";
 
 // constants
 import { donutLabels } from "../../constants/form.constants";
+import { columnsFormat2 } from "../../constants/columnFormats.constants";
 
 // charts
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
@@ -32,12 +35,12 @@ const AdInsightsWithDonut = () => {
     setShowChart((prev) => !prev);
   };
 
-  const getData = (chartBy, dummy) => {
-    const total = dummy.reduce((total, cur) => total + cur[chartBy], 0);
+  const getData = (chartBy, dummyData) => {
+    const total = dummyData.reduce((total, cur) => total + cur[chartBy], 0);
 
     const preparedData = {
       // preparing the label as per percentage
-      labels: dummy.map(
+      labels: dummyData.map(
         (item) =>
           `${item.group} ${((item[chartBy] / total) * 100).toFixed(2)} %`
       ),
@@ -47,7 +50,7 @@ const AdInsightsWithDonut = () => {
     preparedData["datasets"] = [
       {
         label: "",
-        data: dummy.map((item) => item[chartBy]),
+        data: dummyData.map((item) => item[chartBy]),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
@@ -65,8 +68,9 @@ const AdInsightsWithDonut = () => {
     return preparedData;
   };
 
-  const dummy = [
+  const dummyData = [
     {
+      id: "1",
       group: "Male",
       clicks: 348,
       cost: 12528,
@@ -74,6 +78,7 @@ const AdInsightsWithDonut = () => {
       revenue: 62118,
     },
     {
+      id: "2",
       group: "Female",
       clicks: 692,
       cost: 24912,
@@ -81,6 +86,7 @@ const AdInsightsWithDonut = () => {
       revenue: 5175,
     },
     {
+      id: "3",
       group: "Unknown",
       clicks: 105,
       cost: 3943,
@@ -89,7 +95,22 @@ const AdInsightsWithDonut = () => {
     },
   ];
 
-  const data = getData(chartBy, dummy);
+  const doughnutData = getData(chartBy, dummyData);
+
+  const finalRow = dummyData.reduce(
+    (accumulator, curObj) => ({
+      clicks: accumulator.clicks + curObj.clicks,
+      cost: accumulator.cost + curObj.cost,
+      conversions: accumulator.conversions + curObj.conversions,
+      revenue: accumulator.revenue + curObj.revenue,
+    }),
+    {
+      clicks: 0,
+      cost: 0,
+      conversions: 0,
+      revenue: 0,
+    }
+  );
 
   return (
     <div className={styles.container}>
@@ -122,13 +143,13 @@ const AdInsightsWithDonut = () => {
           <div
             style={{
               width: "100%",
-              maxHeight: "50vh",
+              height: "520px",
               display: "flex",
               justifyContent: "center",
             }}
           >
             <Doughnut
-              data={data}
+              data={doughnutData}
               options={{
                 plugins: {
                   legend: {
@@ -139,7 +160,22 @@ const AdInsightsWithDonut = () => {
             />
           </div>
         ) : (
-          <div>Table</div>
+          <>
+            <DataGrid
+              aria-label="Insights table for Donut chart"
+              density="comfortable"
+              rows={dummyData}
+              columns={columnsFormat2}
+              autoPageSize={false}
+              hideFooterPagination={true}
+              hideFooter={true}
+            />
+            <AggregateRow
+              row={finalRow}
+              columnFormat={columnsFormat2}
+              totalCellWidth={columnsFormat2[0].width}
+            />
+          </>
         )}
       </SectionWithHeader>
       <div className={styles.toggle}>

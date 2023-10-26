@@ -25,7 +25,7 @@ const SectionWithHeader = ({ heading, infoText, others, children }) => {
           )}
         </div>
       </header>
-      <div>{children}</div>
+      {children}
     </section>
   );
 };

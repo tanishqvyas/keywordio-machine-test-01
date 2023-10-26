@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #fafafa;
+  --background-color: #fafafa;
   --nav-height: 64px;
   --form-col-gap: 20px;
 

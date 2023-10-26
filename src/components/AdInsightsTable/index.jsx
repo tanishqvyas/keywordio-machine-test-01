@@ -2,6 +2,7 @@ import React from "react";
 
 // components
 import SectionWithHeader from "../SectionWithHeader";
+import AggregateRow from "../AggregateRow";
 
 // mui
 import { DataGrid } from "@mui/x-data-grid";
@@ -13,7 +14,7 @@ import { columnsFormat1 } from "../../constants/columnFormats.constants";
 import { rows } from "../../__mocks__";
 
 const AdInsightsTable = () => {
-  const finalRow = rows.reduce(
+  let finalRow = rows.reduce(
     (accumulator, curObj) => {
       return {
         clicks: accumulator.clicks + curObj.clicks,
@@ -30,23 +31,24 @@ const AdInsightsTable = () => {
     }
   );
 
-  const aggregate = {
-    id: "aggr",
-    campaign: "Total",
-    ...finalRow,
-  };
-
   return (
     <SectionWithHeader
       heading="Ad Insights"
       infoText="This section contains the insights related to created ads"
     >
       <DataGrid
-        rows={[...rows, aggregate]}
+        aria-label="Insights table"
+        density="comfortable"
+        rows={rows}
         columns={columnsFormat1}
         autoPageSize={false}
         hideFooterPagination={true}
         hideFooter={true}
+      />
+      <AggregateRow
+        row={finalRow}
+        columnFormat={columnsFormat1}
+        totalCellWidth={columnsFormat1[0].width}
       />
     </SectionWithHeader>
   );
