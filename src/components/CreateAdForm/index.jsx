@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styles from "./CreateAdForm.module.css";
-import { useBeforeUnload } from "react-router-dom";
+import { useBeforeUnload, useNavigate } from "react-router-dom";
 
 // mui
 import TextField from "@mui/material/TextField";
@@ -15,6 +15,7 @@ import LayoutTwo from "../../layouts/LayoutTwo";
 
 // constants
 import { labels } from "../../constants/form.constants";
+import { routes } from "../../constants/routes.constants";
 
 /**
  *
@@ -23,6 +24,8 @@ import { labels } from "../../constants/form.constants";
  * @returns Ad Creation Form element
  */
 const CreateAdForm = ({ name, isMedia = false }) => {
+  const navigate = useNavigate();
+
   // states
   const [headingOne, setHeadingOne] = useState("");
   const [headingTwo, setHeadingTwo] = useState("");
@@ -35,7 +38,7 @@ const CreateAdForm = ({ name, isMedia = false }) => {
   const [video, setVideo] = useState("");
 
   const [businessName, setBusinessName] = useState("");
-  const [buttonLabel, setbuttonLabel] = useState("");
+  const [buttonLabel, setButtonLabel] = useState("");
   const [websiteURL, setWebsiteURL] = useState("");
 
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
@@ -59,10 +62,12 @@ const CreateAdForm = ({ name, isMedia = false }) => {
       headingOne === "" &&
       headingTwo === "" &&
       description === "" &&
-      video === "" &&
-      portraitImg === "" &&
-      landscapeImg === "" &&
-      squareImg === "" &&
+      (isMedia
+        ? video === "" &&
+          portraitImg === "" &&
+          landscapeImg === "" &&
+          squareImg === ""
+        : true) &&
       businessName === "" &&
       buttonLabel === "" &&
       websiteURL === ""
@@ -89,10 +94,12 @@ const CreateAdForm = ({ name, isMedia = false }) => {
       headingOne !== "" &&
       headingTwo !== "" &&
       description !== "" &&
-      video !== "" &&
-      portraitImg !== "" &&
-      landscapeImg !== "" &&
-      squareImg !== "" &&
+      (isMedia
+        ? video !== "" &&
+          portraitImg !== "" &&
+          landscapeImg !== "" &&
+          squareImg !== ""
+        : true) &&
       businessName !== "" &&
       buttonLabel !== "" &&
       websiteURL !== ""
@@ -129,7 +136,23 @@ const CreateAdForm = ({ name, isMedia = false }) => {
       };
     }
 
-    console.log("Requets Payload", payload);
+    clearForm();
+    navigate(routes.ADS_SUBMITTED, { replace: true });
+  };
+
+  const clearForm = () => {
+    setHeadingOne("");
+    setHeadingTwo("");
+    setDescription("");
+
+    setLandscapeImg("");
+    setPortraitImg("");
+    setSquareImg("");
+    setVideo("");
+
+    setBusinessName("");
+    setButtonLabel("");
+    setWebsiteURL("");
   };
 
   return (
@@ -245,7 +268,7 @@ const CreateAdForm = ({ name, isMedia = false }) => {
           type="text"
           value={buttonLabel}
           onChange={(e) => {
-            setbuttonLabel(e.target.value);
+            setButtonLabel(e.target.value);
           }}
         >
           {labels.map((option) => (
@@ -271,10 +294,17 @@ const CreateAdForm = ({ name, isMedia = false }) => {
         <Button
           variant="contained"
           disableElevation
-          onClick={() => alert("submitted")}
+          onClick={handleSubmit}
           disabled={isDisabled()}
         >
           Submit
+        </Button>
+        <Button
+          variant="outlined"
+          disableElevation
+          onClick={() => navigate(routes.CREATE_ADS)}
+        >
+          Back
         </Button>
       </Stack>
     </div>

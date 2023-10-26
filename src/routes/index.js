@@ -7,6 +7,7 @@ import Dashboard from "../pages/Dashboard";
 import CreateAds from "../pages/CreateAds";
 import TextAd from "../pages/TextAd";
 import MediaAd from "../pages/MediaAd";
+import AdsSubmitted from "../pages/AdsSubmitted"
 
 export const navRoutes = [
   {
@@ -46,6 +47,11 @@ export const pageRoutes = [
     name: "Create Media Ads",
     path: routes.MEDIA_ADS,
     element: <MediaAd />,
+  },
+  {
+    name: "Ads Submitted Successfully",
+    path: routes.ADS_SUBMITTED,
+    element: <AdsSubmitted />
   },
   {
     name: "Page Not Found",
