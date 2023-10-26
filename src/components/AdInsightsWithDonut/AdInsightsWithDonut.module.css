@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.toggle {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}

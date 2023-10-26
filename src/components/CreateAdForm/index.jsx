@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import styles from "./CreateAdForm.module.css";
-import { useBeforeUnload, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // mui
 import TextField from "@mui/material/TextField";
@@ -41,54 +41,6 @@ const CreateAdForm = ({ name, isMedia = false }) => {
   const [buttonLabel, setButtonLabel] = useState("");
   const [websiteURL, setWebsiteURL] = useState("");
 
-  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
-
-  // handling the case where user tries to leave the form by mistake without saving/submitting
-  useBeforeUnload(
-    useCallback(
-      (event) => {
-        if (hasUnsavedChanges) {
-          event.preventDefault();
-          event.returnValue = "";
-        }
-      },
-      [hasUnsavedChanges]
-    ),
-    { capture: true }
-  );
-
-  useEffect(() => {
-    if (
-      headingOne === "" &&
-      headingTwo === "" &&
-      description === "" &&
-      (isMedia
-        ? video === "" &&
-          portraitImg === "" &&
-          landscapeImg === "" &&
-          squareImg === ""
-        : true) &&
-      businessName === "" &&
-      buttonLabel === "" &&
-      websiteURL === ""
-    ) {
-      setHasUnsavedChanges(false);
-    } else {
-      setHasUnsavedChanges(true);
-    }
-  }, [
-    headingOne,
-    headingTwo,
-    description,
-    video,
-    portraitImg,
-    landscapeImg,
-    squareImg,
-    businessName,
-    buttonLabel,
-    websiteURL,
-  ]);
-
   const isDisabled = () => {
     if (
       headingOne !== "" &&
@@ -99,7 +51,7 @@ const CreateAdForm = ({ name, isMedia = false }) => {
           portraitImg !== "" &&
           landscapeImg !== "" &&
           squareImg !== ""
-        : true) &&
+        : false) &&
       businessName !== "" &&
       buttonLabel !== "" &&
       websiteURL !== ""
