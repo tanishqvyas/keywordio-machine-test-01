@@ -53,7 +53,4 @@ With this you should have the instance of the application available at `localhos
 
 1. [UI Mockup](https://xd.adobe.com/view/aaa4e9ba-d4e9-453b-af57-9797788d78bc-fff7/)
 
-![image](https://github.com/tanishqvyas/keywordio-machine-test-01/assets/43847978/3f14f762-d9d7-4ab1-8ef2-c88f2b1387ec)
-
-![image](https://github.com/tanishqvyas/keywordio-machine-test-01/assets/43847978/eb81e223-4b17-4736-a101-0a2335c1ed02)
 
