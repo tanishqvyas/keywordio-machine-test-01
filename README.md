@@ -56,7 +56,9 @@ With this you should have the instance of the application available at `localhos
 3. [Legend Positioning](https://www.chartjs.org/docs/latest/configuration/legend.html)
 
 
-# Screenshots of the Application
+# Screenshots of the Application'
+
+This section contains some screenshots from the application for consideration. Please note that the screenshots are in no particular order of workflow.
 
 ## Dashboard Page
 
