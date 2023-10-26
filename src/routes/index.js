@@ -5,6 +5,8 @@ import { routes } from "../constants/routes.constants";
 import PageNotFound from "../pages/PageNotFound";
 import Dashboard from "../pages/Dashboard";
 import CreateAds from "../pages/CreateAds";
+import TextAd from "../pages/TextAd";
+import MediaAd from "../pages/MediaAd";
 
 export const navRoutes = [
   {
@@ -34,6 +36,16 @@ export const pageRoutes = [
     name: "Create Ads",
     path: routes.CREATE_ADS,
     element: <CreateAds />,
+  },
+  {
+    name: "Create Text Ads",
+    path: routes.TEXT_ADS,
+    element: <TextAd />,
+  },
+  {
+    name: "Create Media Ads",
+    path: routes.MEDIA_ADS,
+    element: <MediaAd />,
   },
   {
     name: "Page Not Found",
