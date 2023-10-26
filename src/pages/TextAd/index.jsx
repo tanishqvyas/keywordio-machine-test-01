@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+
+// components
+import CreateAdForm from "../../components/CreateAdForm";
 
 const TextAd = () => {
-  return (
-    <div>TextAd</div>
-  )
-}
+  return <CreateAdForm name="Create Text Ad" />;
+};
 
-export default TextAd
+export default TextAd;

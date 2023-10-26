@@ -1,7 +1,10 @@
 import React from "react";
 
+// components
+import CreateAdForm from "../../components/CreateAdForm";
+
 const MediaAd = () => {
-  return <div>MediaAd</div>;
+  return <CreateAdForm name="Create Text & Media Ad" isMedia={true} />;
 };
 
 export default MediaAd;
