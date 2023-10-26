@@ -1,15 +1,15 @@
 export const labels = [
   {
-    value: "Cosmetics",
-    label: "Cosmetics",
+    value: "Category A",
+    label: "Category A",
   },
   {
-    value: "Serums",
-    label: "Serums",
+    value: "Category B",
+    label: "Category B",
   },
   {
-    value: "Facewash",
-    label: "Facewash",
+    value: "Category C",
+    label: "Category C",
   },
 ];
 
